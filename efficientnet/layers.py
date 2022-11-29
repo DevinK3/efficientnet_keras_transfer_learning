@@ -27,7 +27,7 @@ class DropConnect(KL.Layer):
             random_tensor = keep_prob
             random_tensor += tf.random.uniform([batch_size, 1, 1, 1], dtype=inputs.dtype)
             binary_tensor = tf.floor(random_tensor)
-            output = tf.floordiv(inputs, keep_prob) * binary_tensor
+            output = tf.math.floordiv(inputs, keep_prob) * binary_tensor
             return output
 
 
